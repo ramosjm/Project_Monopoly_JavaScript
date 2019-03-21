@@ -9,10 +9,12 @@ Tile.prototype.getData = function () {
   const request = new RequestHelper(this.url);
   return request.get()
   .then (data => this.handleData(data));
+
 };
 
 Tile.prototype.handleData = function(data){
   this.data = data
+  PubSub.publish('Tile:all-tiles-ready',this.data);
 };
 
 module.exports = Tile;
