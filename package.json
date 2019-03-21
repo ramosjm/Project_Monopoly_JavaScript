@@ -1,0 +1,25 @@
+{
+  "name": "monopoly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha client/src/models/specs",
+    "build": "webpack -w",
+    "server:dev": "nodemon server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongod": "^2.0.0",
+    "mongodb": "^3.1.13"
+  }
+}
