@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
   const tileData = new Tile('http://localhost:3000/api/monopoly');
   tileData.getData();
-  console.log(tileData.getData());
 
   boardView = new BoardView();
   boardView.bindEvents();
