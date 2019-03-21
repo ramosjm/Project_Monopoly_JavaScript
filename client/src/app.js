@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',function(){
   const tileData = new Tile('http://localhost:3000/api/monopoly');
   tileData.getData();
 
-  const contentContainer = document.querySelector('#content-container');
+  const contentContainer = document.querySelector('.content-container');
   const boardView = new BoardView(contentContainer);
   boardView.bindEvents();
 

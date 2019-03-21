@@ -9,9 +9,9 @@ const BoardView = function(container){
 BoardView.prototype.bindEvents = function() {
   PubSub.subscribe('Tile:all-tiles-ready',(evt)=>{
     const tiles = evt.detail;
-    tiles.forEach((tile)=>{
+    tiles.forEach((tile, index)=>{
       tileView = new TileView(tile);
-      this.container.appendChild(tileView.render());
+      this.container.appendChild(tileView.render(index+1));
     });
 
   });
