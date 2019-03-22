@@ -7,6 +7,13 @@ const Player = function(){
 };
 
 //this will be called by the board - a button called roll will appear.
+Player.prototype.rollDice = function(){
+  dice = new Dice();
+  dice.handleDice();
+  this.dice = dice;
+  this.isDouble();
+};
+
 Player.prototype.isDouble = function(){
   if (this.dice.double == true){
     this.moveTwice();
@@ -15,12 +22,6 @@ Player.prototype.isDouble = function(){
   };
 };
 
-Player.prototype.rollDice = function(){
-  dice = new Dice();
-  dice.handleDice();
-  this.dice = dice;
-  this.isDouble();
-};
 
 Player.prototype.moveTwice = function(){
   this.moveOnce();

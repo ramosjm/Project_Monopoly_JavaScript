@@ -2,7 +2,6 @@ const assert = require('assert');
 const Board = require('../board.js');
 const Player = require('../player.js');
 const Tile = require('../tile.js');
-const RequestHelper = require('../../helpers/request_helper');
 
 describe('Board', function(){
 
