@@ -36,8 +36,8 @@ describe ('Player',function(){
       dice.double = true;
       player.dice = dice;
       player.moveTwice();
-      const expected = player.position;
-      assert.equal(5,expected);
+      const expected = (player.position>5);
+      assert.equal(true,expected);
     });
 
 

@@ -26,13 +26,11 @@ Player.prototype.rollDice = function(){
 Player.prototype.moveTwice = function(){
   this.moveOnce();
   this.rollDice();
-  console.log('final move one');
 };
 
 Player.prototype.moveOnce = function(){
   newPosition = this.position + this.dice.die1 + this.dice.die2;
   this.position = newPosition;
-  console.log('final position',newPosition);
 };
 
 
