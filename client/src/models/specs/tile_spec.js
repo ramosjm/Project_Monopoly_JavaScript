@@ -10,7 +10,12 @@ describe ('Tiles',function(){
     });
 
     it('should have a tile id',function(){
-      assert.equal(1,tile.getID());
+      console.log(tile);
+      assert.equal(1,tile.data[0].tile_id);
+    });
+
+    it('should have a name', function(){
+      assert.equal('GO',tile.getName())
     });
 
 
