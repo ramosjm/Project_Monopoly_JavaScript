@@ -24,7 +24,8 @@ describe('Dice', function(){
     });
 
     it('should get this.double',function(){
-      const expected = dice.double;
+      const testDice = new Dice();
+      const expected = testDice.double;
       assert.equal(false,expected);
     });
 

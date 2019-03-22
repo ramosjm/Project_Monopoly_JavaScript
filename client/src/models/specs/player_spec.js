@@ -24,10 +24,20 @@ describe ('Player',function(){
     it('should move by dice roll',function(){
       dice.die1 = 3;
       dice.die2 = 2;
-      player.dice = dice
+      player.dice = dice;
       player.moveOnce();
       const expected = player.position;
       assert.equal(6,expected);
+    });
+
+    it('should move twice',function(){
+      dice.die1 = 2;
+      dice.die2 = 2;
+      dice.double = true;
+      player.dice = dice;
+      player.moveTwice();
+      const expected = player.position;
+      assert.equal(5,expected);
     });
 
 
