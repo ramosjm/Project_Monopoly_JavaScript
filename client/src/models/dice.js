@@ -1,4 +1,5 @@
 //dice will have a random roll function.
+const PubSub = require('../helpers/pub_sub.js');
 
 const Dice = function(){
   this.die1 = null;
