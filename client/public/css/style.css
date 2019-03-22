@@ -9,11 +9,6 @@ div{
   grid-template-rows: repeat(10,1fr);
 };
 
-/* .board-center{
-  grid-column: 2/3;
-  grid-row: 2/3;
-}; */
-
 .item-1{
   grid-column: 1/2;
   grid-row: 1/2;
@@ -70,6 +65,13 @@ div{
   grid-row: 1/2;
 
 }
+
+.center-board{
+  background-color: blue;
+  grid-column: 2/11;
+  grid-row: 2/11;
+}
+
 .item-12{
   grid-column: 11/12;
   grid-row: 2/3;

@@ -13,7 +13,10 @@ BoardView.prototype.bindEvents = function() {
       tileView = new TileView(tile);
       this.container.appendChild(tileView.render(index+1));
     });
-
+    const centerBoard = document.createElement('div');
+    centerBoard.classList.add('center-board');
+    centerBoard.textContent = 'Middle goes here';
+    this.container.appendChild(centerBoard);
   });
 
 };
