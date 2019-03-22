@@ -19,7 +19,6 @@ Player.prototype.rollDice = function(){
   dice = new Dice();
   dice.handleDice();
   this.dice = dice;
-  console.log('in roll dice',this.dice);
   this.isDouble();
 };
 

@@ -8,5 +8,7 @@ const Player = require ('./player.js');
 
 
 const Board = function(players){
-  this.players = [players];
+  this.players = players;
 };
+
+module.exports = Board;
