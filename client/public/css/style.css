@@ -67,9 +67,18 @@ div{
 }
 
 .center-board{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
   background-color: blue;
   grid-column: 2/11;
   grid-row: 2/11;
+}
+
+.roll-dice-button{
+  border-radius: 5px;
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .item-12{

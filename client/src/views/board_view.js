@@ -13,9 +13,18 @@ BoardView.prototype.bindEvents = function() {
       tileView = new TileView(tile);
       this.container.appendChild(tileView.render(index+1));
     });
+
     const centerBoard = document.createElement('div');
     centerBoard.classList.add('center-board');
     centerBoard.textContent = 'Middle goes here';
+
+    const rollDiceButton = document.createElement('button');
+    rollDiceButton.classList.add('roll-dice-button');
+    rollDiceButton.textContent = 'Roll Dice';
+
+    centerBoard.appendChild(rollDiceButton);
+
+
     this.container.appendChild(centerBoard);
   });
 
