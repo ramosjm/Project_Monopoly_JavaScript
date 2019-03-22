@@ -9,9 +9,7 @@ const Dice = function(){
 Dice.prototype.handleDice = function(){
   this.roll();
   this.isDouble();
-
 };
-
 
 Dice.prototype.roll = function(){
   const die1 = Math.floor(Math.random()*6)+1;

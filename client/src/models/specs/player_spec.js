@@ -2,13 +2,20 @@
 
 const assert = require('assert');
 const Dice = require('../dice.js');
+const Player = require('../player.js');
 
 describe ('Player',function(){
-  let tile
+  let player
 
-  describe('Starts at 0', function(){
+  describe('Position', function(){
     beforeEach(function(){
-      tile = new Dice();
+      player = new Player();
+
+    });
+
+    it('should start at positon 1',function(){
+      const expected = player.position
+      assert.equal(1,expected);
     });
 
 
