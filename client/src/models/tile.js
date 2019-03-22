@@ -11,7 +11,7 @@ const Tile = function(url){
 Tile.prototype.getData = function () {
   const request = new RequestHelper(this.url);
   return request.get()
-  .then (data => this.handleData(data));
+    .then (data => this.handleData(data));
 
 };
 

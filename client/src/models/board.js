@@ -7,8 +7,9 @@
 const Player = require ('./player.js');
 
 
-const Board = function(players){
+const Board = function(players,tiles){
   this.players = players;
+  this.tiles = tiles;
 };
 
 module.exports = Board;
