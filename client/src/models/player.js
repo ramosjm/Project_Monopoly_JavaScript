@@ -37,6 +37,11 @@ Player.prototype.moveOnce = function(){
 
 Player.prototype.buyProperty = function(tile){
   this.reduceCash(tile.cost);
+  this.addProperty(tile);
+};
+
+Player.prototype.addProperty = function(tile){
+  this.property.push(tile);
 };
 
 Player.prototype.reduceCash = function(cost){
