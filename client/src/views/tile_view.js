@@ -7,10 +7,19 @@ const TileView = function(tile){
 };
 
 TileView.prototype.render = function(index){
-  const paragraph = document.createElement('div');
-  paragraph.classList.add(`item-${index}`);
-  paragraph.textContent = this.name;
-  return paragraph;
+  const tileDiv = document.createElement('div');
+  tileDiv.classList.add(`item-${index}`);
+  tileDiv.textContent = this.name;
+  const icon = this.createPlayerIcon();
+  tileDiv.appendChild(icon);
+  return tileDiv;
+};
+
+TileView.prototype.createPlayerIcon = function () {
+  const icon = document.createElement('p');
+  icon.classList.add('hidden');
+  icon.textContent ='Player Here';
+  return icon;
 };
 
 module.exports = TileView;

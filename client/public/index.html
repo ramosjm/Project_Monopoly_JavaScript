@@ -8,7 +8,17 @@
   </head>
   <body>
     <h1>Monopoly</h1>
-    <div class="content-container"></div>
+    <form class="show" id="start-game-form">
+      <label for="number-of-players"> Choose the Number of Players</label>
+      <select class="show" id= "game-dropdown"name="">
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+      </select>
+      <input id = 'play-button' type="button" name="" value="Play">
+    </form>
+
+    <div id = "monopoly-board" class="hidden"></div>
 
   </body>
 </html>

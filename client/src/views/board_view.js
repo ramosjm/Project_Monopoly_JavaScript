@@ -1,13 +1,23 @@
 const PubSub = require('../helpers/pub_sub.js');
 const TileView = require('./tile_view');
 
-const BoardView = function(container){
+const BoardView = function(container,playButton){
   this.container = container;
   this.diceResult = null;
-
+  this.playButton = playButton;
+  this.players = null;
 };
 
 BoardView.prototype.bindEvents = function() {
+
+  this.playButton.addEventListener('click',()=>{
+    const dropDown = document.querySelector('#game-dropdown');
+    PubSub.publish('BoardView:selection',dropDown.value);
+    const form =document.querySelector('#start-game-form');
+    form.classList.replace('show','hidden');
+    this.container.classList.replace('hidden','content-container');
+  });
+
   PubSub.subscribe('Tile:all-tiles-ready',(evt)=>{
     const tiles = evt.detail;
     tiles.forEach((tile, index)=>{
@@ -15,23 +25,35 @@ BoardView.prototype.bindEvents = function() {
       this.container.appendChild(tileView.render(index+1));
     });
 
-    const centerBoard = document.createElement('div');
-    centerBoard.classList.add('center-board');
-    centerBoard.textContent = 'Middle goes here';
+  });
 
+  PubSub.subscribe('Board:players-ready',(evt)=>{
+    this.players = evt.detail;
+    console.log(this.players);
     const resultContainer = this.createRollResult();
     const rollDiceButton = this.createRollDiceButton(resultContainer);
+    const centerBoard = this.createCenterBoard();
     centerBoard.appendChild(resultContainer);
     centerBoard.appendChild(rollDiceButton);
     this.container.appendChild(centerBoard);
+    //do something with players -- they need to roll the dice.
   });
 
-  PubSub.subscribe('App:roll-number-ready',(evt)=>{
+  PubSub.subscribe('Player:dice-rolled',(evt)=>{
     console.log(evt.detail);
     const die1 = evt.detail.die1;
     const die2 = evt.detail.die2;
     this.diceResult = die1 + die2;
   });
+
+};
+
+BoardView.prototype.createCenterBoard = function(){
+  const centerBoard = document.createElement('div');
+  centerBoard.classList.add('center-board');
+  centerBoard.textContent = 'Middle goes here';
+  return centerBoard;
+
 };
 
 BoardView.prototype.createRollDiceButton = function(container){
@@ -40,7 +62,9 @@ BoardView.prototype.createRollDiceButton = function(container){
   button.textContent = 'Roll Dice';
   button.addEventListener('click',()=>{
     button.classList.replace('roll-dice-button','hidden');
+    this.players[0].rollDice();
     this.showRollResult(container);
+    console.log(this.players[0]);
   });
   return button;
 };
@@ -52,6 +76,7 @@ BoardView.prototype.createRollResult = function(){
 };
 
 BoardView.prototype.showRollResult = function(result){
+  console.log(result);
   result.classList.replace('hidden','result');
   console.log(this.diceResult);
   result.textContent = this.diceResult;
