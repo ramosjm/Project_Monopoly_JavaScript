@@ -1,9 +1,9 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const InfoView = function(container,tile){
-  this.tile = tile
+const InfoView = function(player,container,tile){
+  this.player = player;
   this.container = container;
-
+  this.tile = tile;
 };
 
 InfoView.prototype.render = function(){
@@ -29,7 +29,8 @@ InfoView.prototype.yesButton = function(){
   button.classList.add('button');
   button.textContent = 'Yes';
   button.addEventListener('click',()=>{
-    PubSub.publish('InfoView:yes-clicked',this.tile);
+    this.player.buyProperty(this.tile);
+    console.log(this.player.cash);
     this.showBought();
   });
   return button;

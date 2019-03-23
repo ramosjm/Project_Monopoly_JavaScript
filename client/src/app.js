@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded',function(){
   const board = new Board(tileData);
   board.bindEvents();
 
-  const player = new Player();
-  player.bindEvents();
-
   const playButton = document.querySelector('#play-button');
   const contentContainer = document.querySelector('#monopoly-board');
   const boardView = new BoardView(contentContainer,playButton);

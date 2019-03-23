@@ -71,7 +71,7 @@ BoardView.prototype.createRollDiceButton = function(container, index){
   button.textContent = 'Roll Dice';
   button.addEventListener('click',()=>{
 
-    const currentPlayer =this.players[this.currentIndex];
+    const currentPlayer = this.players[this.currentIndex];
     this.currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
     this.currentTileText.innerHTML = '';
 
@@ -90,7 +90,8 @@ BoardView.prototype.createRollDiceButton = function(container, index){
     this.currentTileText.textContent = `Player ${playerNumber} Here`;
     this.currentTile = this.tiles[currentPlayer.position];
     infoContainer = document.querySelector('#info-display');
-    this.buyTile(infoContainer);
+    this.buyTile(currentPlayer, infoContainer);
+    console.log(this.players);
     this.nextPlayer(button,container);
   });
   return button;
@@ -104,10 +105,10 @@ BoardView.prototype.nextPlayer = function(button,container){
   button.textContent = `Player ${this.currentIndex+1} Roll Dice`;
 };
 
-BoardView.prototype.buyTile = function(container){
+BoardView.prototype.buyTile = function(currentPlayer,container){
   container.innerHTML = '';
   container.classList.replace('hidden','show');
-  const infoView = new InfoView(container,this.currentTile);
+  const infoView = new InfoView(currentPlayer,container,this.currentTile);
   this.centerBoard.appendChild(infoView.render());
 };
 

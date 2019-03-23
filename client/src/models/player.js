@@ -9,15 +9,6 @@ const Player = function(){
   this.cash = 1500;
 };
 
-//this will be called by the board - a button called roll will appear.
-Player.prototype.bindEvents = function(){
-  PubSub.subscribe('InfoView:yes-clicked',(evt)=>{
-    this.buyProperty(evt.detail);
-    console.log(evt.detail);
-    console.log(this.cash);
-  });
-};
-
 Player.prototype.rollDice = function(){
   dice = new Dice();
   dice.handleDice();
