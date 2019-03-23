@@ -6,6 +6,9 @@ div{
 .hidden{
   display: none;
 }
+.hidden-icon{
+  visibility: hidden;
+}
 .content-container{
   display: grid;
   grid-template-columns: repeat(11,1fr);
@@ -84,13 +87,20 @@ div{
   grid-row: 2/3;
   font-size: 30pt;
 }
-.result{
+
+.roll-again-button{
+  border-radius: 5px;
   grid-column: 2/3;
   grid-row: 2/3;
+  font-size: 30pt;
+}
+.result{
+  grid-column: 2/3;
+  grid-row: 1/2;
   text-align: center;
   align-self: center;
   font-size: 40pt;
-  
+
 }
 
 .item-12{

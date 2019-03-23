@@ -16,7 +16,7 @@ TileView.prototype.render = function(index){
 
 TileView.prototype.createPlayerIcon = function () {
   const icon = document.createElement('p');
-  icon.classList.add('hidden');
+  icon.classList.add('hidden-icon');
   icon.textContent ='Player Here';
   return icon;
 };

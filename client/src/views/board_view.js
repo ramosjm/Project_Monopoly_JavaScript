@@ -3,10 +3,12 @@ const TileView = require('./tile_view');
 
 const BoardView = function(container,playButton){
   this.container = container;
+  this.centerBoard = null;
   this.diceResult = null;
   this.playButton = playButton;
   this.players = null;
   this.tiles = null;
+  this.currentIndex = 0;
 };
 
 BoardView.prototype.bindEvents = function() {
@@ -31,18 +33,16 @@ BoardView.prototype.bindEvents = function() {
 
   PubSub.subscribe('Board:players-ready',(evt)=>{
     this.players = evt.detail;
-    console.log(this.players);
     const resultContainer = this.createRollResult();
-    const rollDiceButton = this.createRollDiceButton(resultContainer);
-    const centerBoard = this.createCenterBoard();
-    centerBoard.appendChild(resultContainer);
-    centerBoard.appendChild(rollDiceButton);
-    this.container.appendChild(centerBoard);
-    //do something with players -- they need to roll the dice.
+    const playerIndex = 0
+    const rollDiceButton = this.createRollDiceButton(resultContainer,playerIndex);
+    this.centerBoard = this.createCenterBoard();
+    this.centerBoard.appendChild(resultContainer);
+    this.centerBoard.appendChild(rollDiceButton);
+    this.container.appendChild(this.centerBoard);
   });
 
   PubSub.subscribe('Player:dice-rolled',(evt)=>{
-    console.log(evt.detail);
     const die1 = evt.detail.die1;
     const die2 = evt.detail.die2;
     this.diceResult = die1 + die2;
@@ -53,30 +53,62 @@ BoardView.prototype.bindEvents = function() {
 BoardView.prototype.createCenterBoard = function(){
   const centerBoard = document.createElement('div');
   centerBoard.classList.add('center-board');
-  centerBoard.textContent = 'Middle goes here';
   return centerBoard;
 
 };
 
-BoardView.prototype.createRollDiceButton = function(container){
+BoardView.prototype.createRollDiceButton = function(container, index){
   const button = document.createElement('button');
   button.classList.add('roll-dice-button');
   button.textContent = 'Roll Dice';
   button.addEventListener('click',()=>{
-    button.classList.replace('roll-dice-button','hidden');
-    const currentPlayer = this.players[0]
+
+    const currentPlayer =this.players[this.currentIndex];
     currentPlayer.rollDice();
-    this.showRollResult(container);
-    // fn required to change player - maybe increase the index by one after a roll of the dice.
-    console.log(currentPlayer);
-    console.log(this.tiles);
+    const doubleDiceRoll = currentPlayer.dice.double;
+    if (doubleDiceRoll) {
+      console.log(currentPlayer.dice);
+      button.textContent = 'Roll Again';
+    };
+
+    this.showRollResult(container,index);
 
     const currentTile = document.querySelector(`.item-${currentPlayer.position} p`);
-    console.log(currentTile);
-    currentTile.classList.replace('hidden','show');
+    const playerNumber = this.currentIndex + 1;
+    currentTile.classList.replace('hidden-icon','show');
+    currentTile.textContent = `Player ${playerNumber} Here`;
+    console.log(playerNumber);
+    this.nextPlayer(button,container);
   });
   return button;
 };
+
+BoardView.prototype.nextPlayer = function(button,container){
+  console.log(this.currentIndex);
+  this.currentIndex += 1;
+  if (this.currentIndex >= this.players.length) {
+    this.currentIndex = 0;
+  };
+
+  button.textContent = `Player ${this.currentIndex+1} Roll Dice`;
+  button.addEventListener('click',()=>{
+    const currentPlayer = this.players[this.currentIndex];
+    currentPlayer.rollDice();
+    const doubleDiceRoll = currentPlayer.dice.double;
+    if (doubleDiceRoll) {
+      console.log(currentPlayer.dice);
+      console.log(button);
+      button.textContent = 'Roll Again';
+    };
+    this.showRollResult(container,this.currentIndex);
+
+    const currentTile = document.querySelector(`.item-${currentPlayer.position} p`);
+    const playerNumber = this.currentIndex + 1;
+    currentTile.classList.replace('hidden-icon','show');
+    currentTile.textContent = `Player ${playerNumber} Here`;
+  });
+};
+
 
 BoardView.prototype.createRollResult = function(){
   const result = document.createElement('h2');
@@ -84,11 +116,9 @@ BoardView.prototype.createRollResult = function(){
   return  result;
 };
 
-BoardView.prototype.showRollResult = function(result){
-  console.log(result);
+BoardView.prototype.showRollResult = function(result,index){
   result.classList.replace('hidden','result');
-  console.log(this.diceResult);
-  result.textContent = this.diceResult;
+  result.textContent = `Player ${index+1} rolled ${this.diceResult}`;
 };
 
 
