@@ -38,10 +38,15 @@ BoardView.prototype.bindEvents = function() {
     this.players = evt.detail;
     const resultContainer = this.createRollResult();
     const playerIndex = 0
-    const rollDiceButton = this.createRollDiceButton(resultContainer,playerIndex);
+    const rollDiceButton =     this.createRollDiceButton(resultContainer,playerIndex);
+
+    const infoContainer = this.createInfoContainder();
+
     this.centerBoard = this.createCenterBoard();
+
     this.centerBoard.appendChild(resultContainer);
     this.centerBoard.appendChild(rollDiceButton);
+    this.centerBoard.appendChild(infoContainer);
     this.container.appendChild(this.centerBoard);
   });
 
@@ -84,7 +89,8 @@ BoardView.prototype.createRollDiceButton = function(container, index){
     this.currentTileText.classList.replace('hidden-icon','show');
     this.currentTileText.textContent = `Player ${playerNumber} Here`;
     this.currentTile = this.tiles[currentPlayer.position];
-    this.buyTile();
+    infoContainer = document.querySelector('#info-display');
+    this.buyTile(infoContainer);
     this.nextPlayer(button,container);
   });
   return button;
@@ -98,9 +104,18 @@ BoardView.prototype.nextPlayer = function(button,container){
   button.textContent = `Player ${this.currentIndex+1} Roll Dice`;
 };
 
-BoardView.prototype.buyTile = function(){
-  const infoView = new InfoView(this.currentTile);
+BoardView.prototype.buyTile = function(container){
+  container.innerHTML = '';
+  container.classList.replace('hidden','show');
+  const infoView = new InfoView(container,this.currentTile);
   this.centerBoard.appendChild(infoView.render());
+};
+
+BoardView.prototype.createInfoContainder = function () {
+  const infoDiv = document.createElement('div');
+  infoDiv.classList.add('hidden');
+  infoDiv.id = 'info-display';
+  return infoDiv;
 };
 
 BoardView.prototype.createRollResult = function(){

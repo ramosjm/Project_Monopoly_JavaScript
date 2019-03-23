@@ -1,31 +1,27 @@
 const PubSub = require('../helpers/pub_sub.js');
 
-const InfoView = function(tile){
+const InfoView = function(container,tile){
   this.tile = tile
-  this.container = null;
+  this.container = container;
 
 };
 
 InfoView.prototype.render = function(){
-  console.log(this.tile);
-  const infoDiv = document.createElement('div');
 
   const nameLi = this.createNameElement('li');
-  infoDiv.appendChild(nameLi);
+  this.container.appendChild(nameLi);
 
   const costLi = this.createCostElement('li');
-  infoDiv.appendChild(costLi);
+  this.container.appendChild(costLi);
 
   const yes = this.yesButton();
-  infoDiv.appendChild(yes);
+  this.container.appendChild(yes);
   const no = this.noButton();
-  infoDiv.appendChild(no);
+  this.container.appendChild(no);
 
-  infoDiv.classList.add('tile-info');
+  this.container.classList.add('tile-info');
 
-  this.container = infoDiv;
-
-  return infoDiv;
+  return this.container;
 };
 
 InfoView.prototype.yesButton = function(){
