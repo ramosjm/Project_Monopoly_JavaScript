@@ -12,7 +12,8 @@ db.tiles.insertMany([
     "tile_id": "2",
     "name": "MEDITERRANEAN AVENUE",
     "text": "",
-    "type": ""
+    "type": "",
+    "cost": "60"
   },
   {
     "tile_id": "3",
@@ -22,22 +23,26 @@ db.tiles.insertMany([
   {
     "tile_id": "4",
     "name": "BALTIC AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "60"
   },
   {
     "tile_id": "5",
     "name":"INCOME TAX",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "6",
     "name":"READING RAILROAD",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "7",
     "name":"ORIENTAL AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "100"
   },
   {
     "tile_id": "8",
@@ -47,12 +52,14 @@ db.tiles.insertMany([
   {
     "tile_id": "9",
     "name":"VERMONT AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "100"
   },
   {
     "tile_id": "10",
     "name":"CONNECTICUT AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "120"
   },
   {
     "tile_id": "11",
@@ -61,32 +68,38 @@ db.tiles.insertMany([
   {
     "tile_id": "12",
     "name": "ST. CHARLES PLACE",
-    "type": ""
+    "type": "",
+    "cost": "140"
   },
   {
     "tile_id": "13",
     "name": "ELECTRIC COMPANY",
-    "type": ""
+    "type": "",
+    "cost": "150"
   },
   {
     "tile_id": "14",
     "name": "STATES AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "140"
   },
   {
     "tile_id": "15",
     "name": "VIRGINIA AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "160"
   },
   {
     "tile_id": "16",
     "name": "PENNSYLVANIA RAILROAD",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "17",
     "name": "ST. JAMES PLACE",
-    "type": ""
+    "type": "",
+    "cost": "180"
   },
   {
     "tile_id": "18",
@@ -96,12 +109,14 @@ db.tiles.insertMany([
   {
     "tile_id": "19",
     "name": "TENESSEE AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "180"
   },
   {
     "tile_id": "20",
     "name": "NEW YORK AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "21",
@@ -110,7 +125,8 @@ db.tiles.insertMany([
   {
     "tile_id": "22",
     "name": "KENTUCKY AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "220"
   },
   {
     "tile_id": "23",
@@ -119,37 +135,44 @@ db.tiles.insertMany([
   {
     "tile_id": "24",
     "name": "INDIANA AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "25",
     "name": "ILLINOIS AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "240"
   },
   {
     "tile_id": "26",
     "name": "B. & O. RAILROAD",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "27",
     "name": "ATLANTIC AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "260"
   },
   {
     "tile_id": "28",
     "name": "VENTOR AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "260"
   },
   {
     "tile_id": "29",
     "name": "WATER WORKS",
-    "type": ""
+    "type": "",
+    "cost": "150"
   },
   {
     "tile_id": "30",
     "name": "MARVIN GARDENS",
-    "type": ""
+    "type": "",
+    "cost": "280"
   },
   {
     "tile_id": "31",
@@ -158,12 +181,14 @@ db.tiles.insertMany([
   {
     "tile_id": "32",
     "name": "PACIFIC AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "300"
   },
   {
     "tile_id": "33",
     "name": "NORTH CAROLINA AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "300"
   },
   {
     "tile_id": "34",
@@ -172,12 +197,14 @@ db.tiles.insertMany([
   {
     "tile_id": "35",
     "name": "PENNSYLVANIA AVENUE",
-    "type": ""
+    "type": "",
+    "cost": "320"
   },
   {
     "tile_id": "36",
     "name": "SHORT LINE",
-    "type": ""
+    "type": "",
+    "cost": "200"
   },
   {
     "tile_id": "37",
@@ -186,16 +213,19 @@ db.tiles.insertMany([
   {
     "tile_id": "38",
     "name": "PARK PLACE",
-    "type": ""
+    "type": "",
+    "cost": "350"
   },
   {
     "tile_id": "39",
     "name": "LUXURY TAX",
-    "type": ""
+    "type": "",
+    "cost": "100"
   },
   {
     "tile_id": "40",
     "name": "BOARDWALK",
-    "type": ""
+    "type": "",
+    "cost": "400"
   }
 ]);
