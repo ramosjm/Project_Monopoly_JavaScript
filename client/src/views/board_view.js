@@ -6,6 +6,7 @@ const BoardView = function(container,playButton){
   this.diceResult = null;
   this.playButton = playButton;
   this.players = null;
+  this.tiles = null;
 };
 
 BoardView.prototype.bindEvents = function() {
@@ -19,6 +20,7 @@ BoardView.prototype.bindEvents = function() {
   });
 
   PubSub.subscribe('Tile:all-tiles-ready',(evt)=>{
+    this.tiles = evt.detail;
     const tiles = evt.detail;
     tiles.forEach((tile, index)=>{
       tileView = new TileView(tile);
@@ -62,9 +64,16 @@ BoardView.prototype.createRollDiceButton = function(container){
   button.textContent = 'Roll Dice';
   button.addEventListener('click',()=>{
     button.classList.replace('roll-dice-button','hidden');
-    this.players[0].rollDice();
+    const currentPlayer = this.players[0]
+    currentPlayer.rollDice();
     this.showRollResult(container);
-    console.log(this.players[0]);
+    // fn required to change player - maybe increase the index by one after a roll of the dice.
+    console.log(currentPlayer);
+    console.log(this.tiles);
+
+    const currentTile = document.querySelector(`.item-${currentPlayer.position} p`);
+    console.log(currentTile);
+    currentTile.classList.replace('hidden','show');
   });
   return button;
 };

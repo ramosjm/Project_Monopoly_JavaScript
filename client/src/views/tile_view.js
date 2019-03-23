@@ -1,10 +1,9 @@
-const PubSub = require('../helpers/pub_sub.js');
-
 const TileView = function(tile){
  this.id = tile.tile_id;
  this.name = tile.name;
 
 };
+
 
 TileView.prototype.render = function(index){
   const tileDiv = document.createElement('div');
