@@ -16,35 +16,43 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "3",
-    "name": "COMMUNITY CHEST"
+    "name": "COMMUNITY CHEST",
+    "type": ""
   },
   {
     "tile_id": "4",
-    "name": "BALTIC AVENUE"
+    "name": "BALTIC AVENUE",
+    "type": ""
   },
   {
     "tile_id": "5",
-    "name":"INCOME TAX"
+    "name":"INCOME TAX",
+    "type": ""
   },
   {
     "tile_id": "6",
-    "name":"READING RAILROAD"
+    "name":"READING RAILROAD",
+    "type": ""
   },
   {
     "tile_id": "7",
-    "name":"ORIENTAL AVENUE"
+    "name":"ORIENTAL AVENUE",
+    "type": ""
   },
   {
     "tile_id": "8",
-    "name": "CHANCE"
+    "name": "CHANCE",
+    "type": ""
   },
   {
     "tile_id": "9",
-    "name":"VERMONT AVENUE"
+    "name":"VERMONT AVENUE",
+    "type": ""
   },
   {
     "tile_id": "10",
-    "name":"CONNECTICUT AVENUE"
+    "name":"CONNECTICUT AVENUE",
+    "type": ""
   },
   {
     "tile_id": "11",
@@ -52,39 +60,48 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "12",
-    "name": "ST. CHARLES PLACE"
+    "name": "ST. CHARLES PLACE",
+    "type": ""
   },
   {
     "tile_id": "13",
-    "name": "ELECTRIC COMPANY"
+    "name": "ELECTRIC COMPANY",
+    "type": ""
   },
   {
     "tile_id": "14",
-    "name": "STATES AVENUE"
+    "name": "STATES AVENUE",
+    "type": ""
   },
   {
     "tile_id": "15",
-    "name": "VIRGINIA AVENUE"
+    "name": "VIRGINIA AVENUE",
+    "type": ""
   },
   {
     "tile_id": "16",
-    "name": "PENNSYLVANIA RAILROAD"
+    "name": "PENNSYLVANIA RAILROAD",
+    "type": ""
   },
   {
     "tile_id": "17",
-    "name": "ST. JAMES PLACE"
+    "name": "ST. JAMES PLACE",
+    "type": ""
   },
   {
     "tile_id": "18",
-    "name": "COMMUNITY CHEST"
+    "name": "COMMUNITY CHEST",
+    "type": ""
   },
   {
     "tile_id": "19",
-    "name": "TENESSEE AVENUE"
+    "name": "TENESSEE AVENUE",
+    "type": ""
   },
   {
     "tile_id": "20",
-    "name": "NEW YORK AVENUE"
+    "name": "NEW YORK AVENUE",
+    "type": ""
   },
   {
     "tile_id": "21",
@@ -92,7 +109,8 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "22",
-    "name": "KENTUCKY AVENUE"
+    "name": "KENTUCKY AVENUE",
+    "type": ""
   },
   {
     "tile_id": "23",
@@ -100,31 +118,38 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "24",
-    "name": "INDIANA AVENUE"
+    "name": "INDIANA AVENUE",
+    "type": ""
   },
   {
     "tile_id": "25",
-    "name": "ILLINOIS AVENUE"
+    "name": "ILLINOIS AVENUE",
+    "type": ""
   },
   {
     "tile_id": "26",
-    "name": "B. & O. RAILROAD"
+    "name": "B. & O. RAILROAD",
+    "type": ""
   },
   {
     "tile_id": "27",
-    "name": "ATLANTIC AVENUE"
+    "name": "ATLANTIC AVENUE",
+    "type": ""
   },
   {
     "tile_id": "28",
-    "name": "VENTOR AVENUE"
+    "name": "VENTOR AVENUE",
+    "type": ""
   },
   {
     "tile_id": "29",
-    "name": "WATER WORKS"
+    "name": "WATER WORKS",
+    "type": ""
   },
   {
     "tile_id": "30",
-    "name": "MARVIN GARDENS"
+    "name": "MARVIN GARDENS",
+    "type": ""
   },
   {
     "tile_id": "31",
@@ -132,38 +157,45 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "32",
-    "name": "PACIFIC AVENUE"
+    "name": "PACIFIC AVENUE",
+    "type": ""
   },
   {
     "tile_id": "33",
-    "name": "NORTH CAROLINA AVENUE"
+    "name": "NORTH CAROLINA AVENUE",
+    "type": ""
   },
   {
     "tile_id": "34",
-    "name": "COMMUNITY CHEST"
+    "name": "COMMUNITY CHEST",
   },
   {
     "tile_id": "35",
-    "name": "PENNSYLVANIA AVENUE"
+    "name": "PENNSYLVANIA AVENUE",
+    "type": ""
   },
   {
     "tile_id": "36",
-    "name": "SHORT LINE"
+    "name": "SHORT LINE",
+    "type": ""
   },
   {
     "tile_id": "37",
-    "name": "CHANCE"
+    "name": "CHANCE",
   },
   {
     "tile_id": "38",
-    "name": "PARK PLACE"
+    "name": "PARK PLACE",
+    "type": ""
   },
   {
     "tile_id": "39",
-    "name": "LUXURY TAX"
+    "name": "LUXURY TAX",
+    "type": ""
   },
   {
     "tile_id": "40",
-    "name": "BOARDWALK"
+    "name": "BOARDWALK",
+    "type": ""
   }
 ]);

@@ -20,7 +20,7 @@ Player.prototype.rollDice = function(){
 
 Player.prototype.moveOnce = function(){
   newPosition = this.position + this.dice.die1 + this.dice.die2;
-  if (newPosition >40){
+  if (newPosition > 40){
     this.position = newPosition - 40
   }else{
     this.position = newPosition;
