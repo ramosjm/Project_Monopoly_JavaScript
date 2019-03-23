@@ -5,7 +5,8 @@ const Dice = require('./dice.js');
 const Player = function(){
   this.position = 1;
   this.dice = null;
-  this.property = []
+  this.property = [];
+  this.cash = 1500;
 };
 
 //this will be called by the board - a button called roll will appear.
@@ -25,6 +26,10 @@ Player.prototype.moveOnce = function(){
   }else{
     this.position = newPosition;
   }
+};
+
+Player.prototype.reduceCash = function(cost){
+  this.cash -= cost;
 };
 
 

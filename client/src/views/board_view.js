@@ -1,5 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js');
-const TileView = require('./tile_view');
+const TileView = require('./tile_view.js');
+const InfoView = require('./info_view.js');
 
 const BoardView = function(container,playButton){
   this.container = container;
@@ -8,6 +9,7 @@ const BoardView = function(container,playButton){
   this.playButton = playButton;
   this.players = null;
   this.tiles = null;
+  this.currentTileText = null;
   this.currentTile = null;
   this.currentIndex = 0;
 };
@@ -65,9 +67,9 @@ BoardView.prototype.createRollDiceButton = function(container, index){
   button.addEventListener('click',()=>{
 
     const currentPlayer =this.players[this.currentIndex];
-    this.currentTile = document.querySelector(`.item-${currentPlayer.position} p`);
-    this.currentTile.classList.replace('show','hidden-icon');
-    
+    this.currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
+    this.currentTileText.innerHTML = '';
+
     currentPlayer.rollDice();
     const doubleDiceRoll = currentPlayer.dice.double;
     if (doubleDiceRoll) {
@@ -77,10 +79,13 @@ BoardView.prototype.createRollDiceButton = function(container, index){
 
     this.showRollResult(container);
 
-    this.currentTile = document.querySelector(`.item-${currentPlayer.position} p`);
+    this.currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
     const playerNumber = this.currentIndex + 1;
-    this.currentTile.classList.replace('hidden-icon','show');
-    this.currentTile.textContent = `Player ${playerNumber} Here`;
+    this.currentTileText.classList.replace('hidden-icon','show');
+    this.currentTileText.textContent = `Player ${playerNumber} Here`;
+    this.currentTile = this.tiles[currentPlayer.position];
+    console.log(this.currentTile);
+    this.buyTile();
     this.nextPlayer(button,container);
   });
   return button;
@@ -94,10 +99,16 @@ BoardView.prototype.nextPlayer = function(button,container){
   button.textContent = `Player ${this.currentIndex+1} Roll Dice`;
 };
 
+BoardView.prototype.buyTile = function(){
+  console.dir(this.currentTile);
+  const infoView = new InfoView(this.currentTile);
+  this.centerBoard.appendChild(infoView.render());
+};
+
 BoardView.prototype.createRollResult = function(){
   const result = document.createElement('h2');
   result.classList.add('hidden');
-  return  result;
+  return result;
 };
 
 BoardView.prototype.showRollResult = function(result){
