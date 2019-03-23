@@ -84,7 +84,6 @@ BoardView.prototype.createRollDiceButton = function(container, index){
     this.currentTileText.classList.replace('hidden-icon','show');
     this.currentTileText.textContent = `Player ${playerNumber} Here`;
     this.currentTile = this.tiles[currentPlayer.position];
-    console.log(this.currentTile);
     this.buyTile();
     this.nextPlayer(button,container);
   });
@@ -100,7 +99,6 @@ BoardView.prototype.nextPlayer = function(button,container){
 };
 
 BoardView.prototype.buyTile = function(){
-  console.dir(this.currentTile);
   const infoView = new InfoView(this.currentTile);
   this.centerBoard.appendChild(infoView.render());
 };

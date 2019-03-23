@@ -10,6 +10,13 @@ const Player = function(){
 };
 
 //this will be called by the board - a button called roll will appear.
+Player.prototype.bindEvents = function(){
+  PubSub.subscribe('InfoView:yes-clicked',(evt)=>{
+    this.buyProperty(evt.detail);
+    console.log(evt.detail);
+    console.log(this.cash);
+  });
+};
 
 Player.prototype.rollDice = function(){
   dice = new Dice();
@@ -26,6 +33,10 @@ Player.prototype.moveOnce = function(){
   }else{
     this.position = newPosition;
   }
+};
+
+Player.prototype.buyProperty = function(tile){
+  this.reduceCash(tile.cost);
 };
 
 Player.prototype.reduceCash = function(cost){
