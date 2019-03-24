@@ -12,6 +12,10 @@ PlayerView.prototype.render = function(index){
   const cash = this.createPlayerCash('p');
   this.container.appendChild(cash);
 
+  const propertyHeader = document.createElement('h3');
+  propertyHeader.textContent = 'Owned Properties:'
+  this.container.appendChild(propertyHeader);
+
   this.player.property.forEach((item, index)=>{
     const propertyElement = this.createPlayerProperty('li',index);
     propertyElement.textContent = item.name;
