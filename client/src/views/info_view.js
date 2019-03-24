@@ -16,8 +16,6 @@ InfoView.prototype.render = function(){
 
   const yes = this.yesButton();
   this.container.appendChild(yes);
-  const no = this.noButton();
-  this.container.appendChild(no);
 
   this.container.classList.add('tile-info');
 
@@ -27,9 +25,10 @@ InfoView.prototype.render = function(){
 InfoView.prototype.yesButton = function(){
   const button = document.createElement('button');
   button.classList.add('button');
-  button.textContent = 'Yes';
+  button.textContent = 'Buy';
   button.addEventListener('click',()=>{
     this.player.buyProperty(this.tile);
+    //this should appear in the top of the rolled dice comment.
     this.showBought();
     PubSub.publish('InfoView:player-updated',this.player);
   });
@@ -39,19 +38,10 @@ InfoView.prototype.yesButton = function(){
 InfoView.prototype.showBought = function(){
   this.container.innerHTML = '';
   const boughtFeedback = document.createElement('h2');
-  boughtFeedback.textContent = 'Property Purchased!';
+  boughtFeedback.textContent = `Player bought ${this.tile.name}!`;
   this.container.appendChild(boughtFeedback);
 };
 
-InfoView.prototype.noButton = function () {
-  const button = document.createElement('button');
-  button.classList.add('button');
-  button.textContent = 'Nope';
-  button.addEventListener('click',()=>{
-
-  });
-  return button;
-};
 
 InfoView.prototype.createCostElement = function(element){
   const costLi = document.createElement(element);

@@ -23,7 +23,7 @@ Player.prototype.moveOnce = function(){
     this.position = newPosition - 40
   }else{
     this.position = newPosition;
-  }
+  };
 };
 
 Player.prototype.buyProperty = function(tile){

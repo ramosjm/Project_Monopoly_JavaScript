@@ -10,7 +10,6 @@ const BoardView = function(container,playButton){
   this.playButton = playButton;
   this.players = null;
   this.tiles = null;
-  this.currentTileText = null;
   this.currentTile = null;
   this.currentIndex = 0;
 };
@@ -67,9 +66,7 @@ BoardView.prototype.bindEvents = function() {
   });
 
   PubSub.subscribe('InfoView:player-updated',(evt)=>{
-    console.log('current index',this.currentIndex);
     this.players[this.currentIndex-1] = evt.detail;
-    console.log('all players', this.players);
     this.renderPlayers();
   });
 
@@ -89,27 +86,34 @@ BoardView.prototype.createRollDiceButton = function(container, index){
   button.addEventListener('click',()=>{
 
     const currentPlayer = this.players[this.currentIndex];
-    this.currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
-    this.currentTileText.innerHTML = '';
-
+    const currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
+    currentTileText.innerHTML = '';
     currentPlayer.rollDice();
+
     const doubleDiceRoll = currentPlayer.dice.double;
-    if (doubleDiceRoll) {
+    if (!doubleDiceRoll) {
+
+      this.showRollResult(container);
+      const playerNumber = this.currentIndex + 1;
+      this.updateCurrentTile(currentPlayer,playerNumber);
+      infoContainer = document.querySelector('#info-display');
+      this.buyTile(currentPlayer, infoContainer);
+      this.renderPlayers();
+      this.nextPlayer(button,container);
+    }else{
       console.log('double roll eh',currentPlayer.dice);
       button.textContent = 'Roll Again';
+      currentTileText.innerHTML = '';
+      currentPlayer.rollDice();
+      this.showRollResult(container);
+
+      const playerNumber = this.currentIndex + 1;
+      this.updateCurrentTile(currentPlayer,playerNumber);
+      infoContainer = document.querySelector('#info-display');
+      this.buyTile(currentPlayer, infoContainer);
+      this.renderPlayers();
     };
 
-    this.showRollResult(container);
-
-    this.currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
-    const playerNumber = this.currentIndex + 1;
-    this.currentTileText.classList.replace('hidden-icon','show');
-    this.currentTileText.textContent = `Player ${playerNumber} Here`;
-    this.currentTile = this.tiles[currentPlayer.position];
-    infoContainer = document.querySelector('#info-display');
-    this.buyTile(currentPlayer, infoContainer);
-    this.renderPlayers();
-    this.nextPlayer(button,container);
   });
   return button;
 };
@@ -137,7 +141,13 @@ BoardView.prototype.buyTile = function(currentPlayer,container){
   container.classList.replace('hidden','show');
   const infoView = new InfoView(currentPlayer,container,this.currentTile);
   this.centerBoard.appendChild(infoView.render());
+};
 
+BoardView.prototype.updateCurrentTile = function(currentPlayer,playerNumber){
+  const currentTileText = document.querySelector(`.item-${currentPlayer.position} p`);
+  currentTileText.classList.replace('hidden-icon','show');
+  currentTileText.textContent = `Player ${playerNumber} Here`;
+  this.currentTile = this.tiles[currentPlayer.position-1];
 };
 
 BoardView.prototype.createPlayerContainer = function (index) {

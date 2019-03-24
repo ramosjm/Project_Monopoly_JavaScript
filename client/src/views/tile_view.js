@@ -5,7 +5,6 @@ const TileView = function(tile){
 
 };
 
-
 TileView.prototype.render = function(index){
   const tileDiv = document.createElement('div');
   tileDiv.classList.add(`item-${index}`);
