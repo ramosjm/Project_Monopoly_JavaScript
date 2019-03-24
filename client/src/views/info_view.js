@@ -30,8 +30,8 @@ InfoView.prototype.yesButton = function(){
   button.textContent = 'Yes';
   button.addEventListener('click',()=>{
     this.player.buyProperty(this.tile);
-    console.log(this.player.cash);
     this.showBought();
+    PubSub.publish('InfoView:player-updated',this.player);
   });
   return button;
 };

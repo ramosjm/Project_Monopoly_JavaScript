@@ -1,6 +1,7 @@
 const PubSub = require('../helpers/pub_sub.js');
 const TileView = require('./tile_view.js');
 const InfoView = require('./info_view.js');
+const PlayerView = require('./player_view.js');
 
 const BoardView = function(container,playButton){
   this.container = container;
@@ -47,13 +48,29 @@ BoardView.prototype.bindEvents = function() {
     this.centerBoard.appendChild(resultContainer);
     this.centerBoard.appendChild(rollDiceButton);
     this.centerBoard.appendChild(infoContainer);
+
+    this.players.forEach((player, index)=>{
+      const playerViewContainer = this.createPlayerContainer(index);
+      this.centerBoard.appendChild(playerViewContainer);
+    });
+
     this.container.appendChild(this.centerBoard);
+
+    this.renderPlayers();
+
   });
 
   PubSub.subscribe('Player:dice-rolled',(evt)=>{
     const die1 = evt.detail.die1;
     const die2 = evt.detail.die2;
     this.diceResult = die1 + die2;
+  });
+
+  PubSub.subscribe('InfoView:player-updated',(evt)=>{
+    console.log('current index',this.currentIndex);
+    this.players[this.currentIndex-1] = evt.detail;
+    console.log('all players', this.players);
+    this.renderPlayers();
   });
 
 };
@@ -91,10 +108,20 @@ BoardView.prototype.createRollDiceButton = function(container, index){
     this.currentTile = this.tiles[currentPlayer.position];
     infoContainer = document.querySelector('#info-display');
     this.buyTile(currentPlayer, infoContainer);
-    console.log(this.players);
+    this.renderPlayers();
     this.nextPlayer(button,container);
   });
   return button;
+};
+
+BoardView.prototype.renderPlayers = function(){
+  // /for each player, get the container and pass throuh the index down
+  this.players.forEach((player,index)=>{
+    const container = document.querySelector(`#player-${index}`);
+    container.innerHTML = '';
+    const playerView = new PlayerView(player,container);
+    playerView.render(index);
+  });
 };
 
 BoardView.prototype.nextPlayer = function(button,container){
@@ -110,6 +137,13 @@ BoardView.prototype.buyTile = function(currentPlayer,container){
   container.classList.replace('hidden','show');
   const infoView = new InfoView(currentPlayer,container,this.currentTile);
   this.centerBoard.appendChild(infoView.render());
+
+};
+
+BoardView.prototype.createPlayerContainer = function (index) {
+  const playerDiv = document.createElement('div');
+  playerDiv.id = `player-${index}`;
+  return playerDiv;
 };
 
 BoardView.prototype.createInfoContainder = function () {
