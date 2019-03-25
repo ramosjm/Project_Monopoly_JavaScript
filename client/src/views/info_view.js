@@ -11,11 +11,12 @@ InfoView.prototype.render = function(){
   const nameLi = this.createNameElement('li');
   this.container.appendChild(nameLi);
 
-  const costLi = this.createCostElement('li');
-  this.container.appendChild(costLi);
-
-  const yes = this.buyButton();
-  this.container.appendChild(yes);
+  if (this.tile.cost != 'none'){
+    const costLi = this.createCostElement('li');
+    this.container.appendChild(costLi);
+    const yes = this.buyButton();
+    this.container.appendChild(yes);
+  };
 
   this.container.classList.add('tile-info');
 
