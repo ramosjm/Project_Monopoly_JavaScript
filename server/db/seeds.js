@@ -13,7 +13,8 @@ db.tiles.insertMany([
     "name": "MEDITERRANEAN AVENUE",
     "text": "",
     "type": "",
-    "cost": "60"
+    "cost": "60",
+    "available": "yes"
   },
   {
     "tile_id": "3",
@@ -25,7 +26,8 @@ db.tiles.insertMany([
     "tile_id": "4",
     "name": "BALTIC AVENUE",
     "type": "",
-    "cost": "60"
+    "cost": "60",
+    "available": "yes"
   },
   {
     "tile_id": "5",
@@ -37,13 +39,15 @@ db.tiles.insertMany([
     "tile_id": "6",
     "name":"READING RAILROAD",
     "type": "",
-    "cost": "200"
+    "cost": "200",
+    "available": "yes"
   },
   {
     "tile_id": "7",
     "name":"ORIENTAL AVENUE",
     "type": "",
-    "cost": "100"
+    "cost": "100",
+    "available": "yes"
   },
   {
     "tile_id": "8",
@@ -55,13 +59,15 @@ db.tiles.insertMany([
     "tile_id": "9",
     "name":"VERMONT AVENUE",
     "type": "",
-    "cost": "100"
+    "cost": "100",
+    "available": "yes"
   },
   {
     "tile_id": "10",
     "name":"CONNECTICUT AVENUE",
     "type": "",
-    "cost": "120"
+    "cost": "120",
+    "available": "yes"
   },
   {
     "tile_id": "11",
@@ -72,37 +78,43 @@ db.tiles.insertMany([
     "tile_id": "12",
     "name": "ST. CHARLES PLACE",
     "type": "",
-    "cost": "140"
+    "cost": "140",
+    "available": "yes"
   },
   {
     "tile_id": "13",
     "name": "ELECTRIC COMPANY",
     "type": "",
-    "cost": "150"
+    "cost": "150",
+    "available": "yes"
   },
   {
     "tile_id": "14",
     "name": "STATES AVENUE",
     "type": "",
-    "cost": "140"
+    "cost": "140",
+    "available": "yes"
   },
   {
     "tile_id": "15",
     "name": "VIRGINIA AVENUE",
     "type": "",
-    "cost": "160"
+    "cost": "160",
+    "available": "yes"
   },
   {
     "tile_id": "16",
     "name": "PENNSYLVANIA RAILROAD",
     "type": "",
-    "cost": "200"
+    "cost": "200",
+    "available": "yes"
   },
   {
     "tile_id": "17",
     "name": "ST. JAMES PLACE",
     "type": "",
-    "cost": "180"
+    "cost": "180",
+    "available": "yes"
   },
   {
     "tile_id": "18",
@@ -114,13 +126,15 @@ db.tiles.insertMany([
     "tile_id": "19",
     "name": "TENESSEE AVENUE",
     "type": "",
-    "cost": "180"
+    "cost": "180",
+    "available": "yes"
   },
   {
     "tile_id": "20",
     "name": "NEW YORK AVENUE",
     "type": "",
-    "cost": "200"
+    "cost": "200",
+    "available": "yes"
   },
   {
     "tile_id": "21",
@@ -131,7 +145,8 @@ db.tiles.insertMany([
     "tile_id": "22",
     "name": "KENTUCKY AVENUE",
     "type": "",
-    "cost": "220"
+    "cost": "220",
+    "available": "yes"
   },
   {
     "tile_id": "23",
@@ -142,43 +157,50 @@ db.tiles.insertMany([
     "tile_id": "24",
     "name": "INDIANA AVENUE",
     "type": "",
-    "cost": "200"
+    "cost": "200",
+    "available": "yes"
   },
   {
     "tile_id": "25",
     "name": "ILLINOIS AVENUE",
     "type": "",
-    "cost": "240"
+    "cost": "240",
+    "available": "yes"
   },
   {
     "tile_id": "26",
     "name": "B. & O. RAILROAD",
     "type": "",
-    "cost": "200"
+    "cost": "200",
+    "available": "yes"
   },
   {
     "tile_id": "27",
     "name": "ATLANTIC AVENUE",
     "type": "",
-    "cost": "260"
+    "cost": "260",
+    "available": "yes"
   },
   {
     "tile_id": "28",
     "name": "VENTOR AVENUE",
     "type": "",
-    "cost": "260"
+    "cost": "260",
+    "available": "yes"
   },
   {
     "tile_id": "29",
     "name": "WATER WORKS",
     "type": "",
-    "cost": "150"
+    "cost": "150",
+    "available": "yes"
   },
   {
     "tile_id": "30",
     "name": "MARVIN GARDENS",
     "type": "",
-    "cost": "280"
+    "cost": "280",
+    "available": "yes"
   },
   {
     "tile_id": "31",
@@ -189,13 +211,15 @@ db.tiles.insertMany([
     "tile_id": "32",
     "name": "PACIFIC AVENUE",
     "type": "",
-    "cost": "300"
+    "cost": "300",
+    "available": "yes"
   },
   {
     "tile_id": "33",
     "name": "NORTH CAROLINA AVENUE",
     "type": "",
-    "cost": "300"
+    "cost": "300",
+    "available": "yes"
   },
   {
     "tile_id": "34",
@@ -205,13 +229,15 @@ db.tiles.insertMany([
     "tile_id": "35",
     "name": "PENNSYLVANIA AVENUE",
     "type": "",
-    "cost": "320"
+    "cost": "320",
+    "available": "yes"
   },
   {
     "tile_id": "36",
     "name": "SHORT LINE",
     "type": "",
-    "cost": "200"
+    "cost": "200",
+    "available": "yes"
   },
   {
     "tile_id": "37",
@@ -222,7 +248,8 @@ db.tiles.insertMany([
     "tile_id": "38",
     "name": "PARK PLACE",
     "type": "",
-    "cost": "350"
+    "cost": "350",
+    "available": "yes"
   },
   {
     "tile_id": "39",
@@ -234,6 +261,7 @@ db.tiles.insertMany([
     "tile_id": "40",
     "name": "BOARDWALK",
     "type": "",
-    "cost": "400"
+    "cost": "400",
+    "available": "yes"
   }
 ]);
