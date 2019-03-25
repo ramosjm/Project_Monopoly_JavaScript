@@ -30,7 +30,7 @@ db.tiles.insertMany([
   {
     "tile_id": "5",
     "name":"INCOME TAX",
-    "type": "",
+    "type": "tax",
     "cost": "200"
   },
   {
@@ -227,7 +227,7 @@ db.tiles.insertMany([
   {
     "tile_id": "39",
     "name": "LUXURY TAX",
-    "type": "",
+    "type": "tax",
     "cost": "100"
   },
   {
