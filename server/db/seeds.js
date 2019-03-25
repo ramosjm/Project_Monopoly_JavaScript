@@ -18,7 +18,8 @@ db.tiles.insertMany([
   {
     "tile_id": "3",
     "name": "COMMUNITY CHEST",
-    "type": ""
+    "type": "",
+    "cost": "none"
   },
   {
     "tile_id": "4",
@@ -47,7 +48,8 @@ db.tiles.insertMany([
   {
     "tile_id": "8",
     "name": "CHANCE",
-    "type": ""
+    "type": "",
+    "cost": "none"
   },
   {
     "tile_id": "9",
@@ -63,7 +65,8 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "11",
-    "name":"IN JAIL / JUST VISITING"
+    "name":"IN JAIL / JUST VISITING",
+    "cost": "none"
   },
   {
     "tile_id": "12",
@@ -104,7 +107,8 @@ db.tiles.insertMany([
   {
     "tile_id": "18",
     "name": "COMMUNITY CHEST",
-    "type": ""
+    "type": "",
+    "cost": "none"
   },
   {
     "tile_id": "19",
@@ -120,7 +124,8 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "21",
-    "name": "FREE PARKING"
+    "name": "FREE PARKING",
+    "cost": "none"
   },
   {
     "tile_id": "22",
@@ -130,7 +135,8 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "23",
-    "name": "CHANCE"
+    "name": "CHANCE",
+    "cost": "none"
   },
   {
     "tile_id": "24",
@@ -176,7 +182,8 @@ db.tiles.insertMany([
   },
   {
     "tile_id": "31",
-    "name": "GO TO JAIL"
+    "name": "GO TO JAIL",
+    "cost": "none"
   },
   {
     "tile_id": "32",
@@ -209,6 +216,7 @@ db.tiles.insertMany([
   {
     "tile_id": "37",
     "name": "CHANCE",
+    "cost": "none"
   },
   {
     "tile_id": "38",
