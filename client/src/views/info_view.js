@@ -11,7 +11,7 @@ InfoView.prototype.render = function(){
   const nameLi = this.createNameElement('li');
   this.container.appendChild(nameLi);
 
-  if (this.tile.cost != 'none'){
+  if ((this.tile.cost != 'none') && (this.tile.available != 'nope')){
     const costLi = this.createCostElement('li');
     this.container.appendChild(costLi);
     const yes = this.buyButton();
@@ -29,6 +29,7 @@ InfoView.prototype.buyButton = function(){
   button.textContent = 'Buy';
   button.addEventListener('click',()=>{
     this.player.buyProperty(this.tile);
+    this.tile.available = 'nope';
     //this should appear in the top of the rolled dice comment.
     this.showBought();
     PubSub.publish('InfoView:player-updated',this.player);

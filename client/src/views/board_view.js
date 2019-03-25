@@ -38,7 +38,7 @@ BoardView.prototype.bindEvents = function() {
     this.players = evt.detail;
     const resultContainer = this.createRollResult();
     const playerIndex = 0
-    const rollDiceButton =     this.createRollDiceButton(resultContainer,playerIndex);
+    const rollDiceButton = this.createRollDiceButton(resultContainer,playerIndex);
 
     const infoContainer = this.createInfoContainder();
 
@@ -91,7 +91,7 @@ BoardView.prototype.createRollDiceButton = function(container, index){
     currentPlayer.rollDice();
 
     const doubleDiceRoll = currentPlayer.dice.double;
-    if (!doubleDiceRoll) {
+    // if (!doubleDiceRoll) {
 
       this.showRollResult(container);
       const playerNumber = this.currentIndex + 1;
@@ -100,19 +100,19 @@ BoardView.prototype.createRollDiceButton = function(container, index){
       this.buyTile(currentPlayer, infoContainer);
       this.renderPlayers();
       this.nextPlayer(button,container);
-    }else{
-      console.log('double roll eh',currentPlayer.dice);
-      button.textContent = 'Roll Again';
-      currentTileText.innerHTML = '';
-      currentPlayer.rollDice();
-      this.showRollResult(container);
+    // }else{
+    //   console.log('double roll eh',currentPlayer.dice);
+    //   button.textContent = 'Roll Again';
+    //   currentTileText.innerHTML = '';
+    //   currentPlayer.rollDice();
+    //   this.showRollResult(container);
 
-      const playerNumber = this.currentIndex + 1;
-      this.updateCurrentTile(currentPlayer,playerNumber);
-      infoContainer = document.querySelector('#info-display');
-      this.buyTile(currentPlayer, infoContainer);
-      this.renderPlayers();
-    };
+      // const playerNumber = this.currentIndex + 1;
+      // this.updateCurrentTile(currentPlayer,playerNumber);
+      // infoContainer = document.querySelector('#info-display');
+      // this.buyTile(currentPlayer, infoContainer);
+      // this.renderPlayers();
+    // };
 
   });
   return button;

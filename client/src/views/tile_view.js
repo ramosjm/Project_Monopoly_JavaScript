@@ -1,18 +1,19 @@
 const TileView = function(tile){
- this.id = tile.tile_id;
- this.name = tile.name;
- this.cost = tile.cost;
+  this.tile = tile;
 
 };
 
 TileView.prototype.render = function(index){
   const tileDiv = document.createElement('div');
   tileDiv.classList.add(`item-${index}`);
-  tileDiv.textContent = this.name;
+  tileDiv.textContent = this.tile.name;
   const icon = this.createPlayerIcon();
   const cost = this.createCostElement();
   tileDiv.appendChild(icon);
-  tileDiv.appendChild(cost);
+  if (this.tile.cost != 'none') {
+    tileDiv.appendChild(cost);
+  };
+
   return tileDiv;
 };
 
@@ -26,7 +27,7 @@ TileView.prototype.createPlayerIcon = function () {
 TileView.prototype.createCostElement = function(){
   const cost = document.createElement('p');
   cost.classList.add('cost-item');
-  cost.textContent = this.cost;
+  cost.textContent = this.tile.cost;
   return cost
 }
 
