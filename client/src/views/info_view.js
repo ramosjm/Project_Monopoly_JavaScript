@@ -14,7 +14,7 @@ InfoView.prototype.render = function(){
   const costLi = this.createCostElement('li');
   this.container.appendChild(costLi);
 
-  const yes = this.yesButton();
+  const yes = this.buyButton();
   this.container.appendChild(yes);
 
   this.container.classList.add('tile-info');
@@ -22,7 +22,7 @@ InfoView.prototype.render = function(){
   return this.container;
 };
 
-InfoView.prototype.yesButton = function(){
+InfoView.prototype.buyButton = function(){
   const button = document.createElement('button');
   button.classList.add('button');
   button.textContent = 'Buy';
