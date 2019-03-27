@@ -6,7 +6,8 @@ db.tiles.insertMany([
     "tile_id": "1",
     "name":"GO",
     "text":"COLLECT 200 SALARY AS YOU PASS",
-    "type":"GO"
+    "type":"GO",
+    "cost":"none"
   },
   {
     "tile_id": "2",
@@ -224,6 +225,7 @@ db.tiles.insertMany([
   {
     "tile_id": "34",
     "name": "COMMUNITY CHEST",
+    "cost":"none"
   },
   {
     "tile_id": "35",

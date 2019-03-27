@@ -40,6 +40,7 @@ InfoView.prototype.buyButton = function(){
 InfoView.prototype.showBought = function(){
   this.container.innerHTML = '';
   const boughtFeedback = document.createElement('h2');
+  console.log(this.player);
   boughtFeedback.textContent = `Player bought ${this.tile.name}!`;
   this.container.appendChild(boughtFeedback);
 };

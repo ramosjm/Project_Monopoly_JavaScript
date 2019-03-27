@@ -25,7 +25,7 @@ PlayerView.prototype.render = function(index){
 
 PlayerView.prototype.createPlayerCash = function(element){
   const cashParagraph = document.createElement(element);
-  cashParagraph.textContent = this.player.cash;
+  cashParagraph.textContent = `Cash: ${this.player.cash}`;
   return cashParagraph;
 };
 
