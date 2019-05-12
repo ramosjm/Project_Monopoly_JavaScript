@@ -6,10 +6,12 @@ const MongoClient = require('mongodb').MongoClient;
 
 const createRouter = require('./helpers/create_router.js');
 
+let port = process.env.PORT ||8080;
+
 const publicPath = path.join(__dirname,'../client/public');
 app.use(express.static(publicPath));
 
-MongoClient.connect('mongodb://localhost:27017',{useNewUrlParser: true})
+MongoClient.connect('mongodb+srv://admin:monopolydb@projects-smr85.mongodb.net/test?retryWrites=true',{useNewUrlParser: true})
   .then((client)=>{
     const db = client.db('monopoly');
     const tilesCollection = db.collection('tiles');

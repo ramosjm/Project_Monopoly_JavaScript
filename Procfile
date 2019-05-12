@@ -1,2 +1,1 @@
-npm run build
-mongod
+web: node ./server/server.js
