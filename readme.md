@@ -12,12 +12,16 @@ This project uses Mongodb to store the individual monopoly tiles (see seeds.js).
 
 
 
-Dev Dependencies:
--Mocha
--Nodemon
--Webpack
--Webpack-cli
-
+-Dev Dependencies
+-
+Mocha
+-
+Nodemon
+-
+Webpack
+-
+Webpack-cli
+-
 Dependencies:
 -body-parser
 -express
