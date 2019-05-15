@@ -8,6 +8,8 @@ In oder to start this, you will need to run the following commands:
 
 The site will be available on http://localhost:3000/
 
+-Brief
+-
 Attempt at making a Monopoly game using JavaScript.
 
 This project uses Mongodb to store the individual monopoly tiles (see seeds.js).
