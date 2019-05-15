@@ -15,13 +15,6 @@ Attempt at making a Monopoly game using JavaScript.
 
 This project uses Mongodb to store the individual monopoly tiles (see seeds.js).
 
-
--First MVP
--
-- Create tiles from MongoDB and arrange this in a board pattern.
-
-
-
 -Dev Dependencies:
 -
 - Mocha
@@ -35,3 +28,23 @@ This project uses Mongodb to store the individual monopoly tiles (see seeds.js).
 - express
 - mongod
 - mongodb
+
+
+-First MVP
+-
+- Create tiles from MongoDB and arrange this in a board pattern.
+- Create models (player, board, tile, dice).
+
+-Second MVP
+-
+- create views for all tiles
+- add logic for players
+
+-Third MVP
+-
+- allow players to buy tiles
+- ensure players cash is reduced by the price of tiles
+- ensure tiles cannot be bought twice
+
+
+
