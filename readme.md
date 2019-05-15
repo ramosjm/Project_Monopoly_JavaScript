@@ -14,14 +14,14 @@ This project uses Mongodb to store the individual monopoly tiles (see seeds.js).
 
 -Dev Dependencies:
 -
--Mocha
--Nodemon
--Webpack
--Webpack-cli
+- Mocha
+- Nodemon
+- Webpack
+- Webpack-cli
 
 -Dependencies:
 -
--body-parser
--express
--mongod
--mongodb
+- body-parser
+- express
+- mongod
+- mongodb
